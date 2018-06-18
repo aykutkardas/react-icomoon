@@ -1,5 +1,11 @@
 ## React IconMoon
 
+#### Install
+```
+npm install react-iconmoon
+```
+
+
 #### Usage
 ```js
 import IconMoon from 'react-iconmoon';
