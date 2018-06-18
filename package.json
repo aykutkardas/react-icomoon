@@ -1,0 +1,20 @@
+{
+  "name": "react-iconmoon",
+  "version": "0.0.1",
+  "description": "IconMoon for React",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "React",
+    "IconMoon",
+    "SVG",
+    "Icon"
+  ],
+  "author": "Aykut Kardaş",
+  "license": "ISC",
+  "devDependencies": {
+    "react": "^16.4.1"
+  }
+}
