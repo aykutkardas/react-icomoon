@@ -14,7 +14,8 @@ class IconMoon extends Component {
         }));
 
         let attr = Object.assign({}, this.props);
-        attr.className = 'icon icon-' + iconName;
+        let beforeClassName = (this.props.className || '');
+        attr.className = beforeClassName + ' icon icon-' + iconName;
         attr.viewBox = Icons.viewBox[iconName] || '0 0 32 32';
 
         return React.createElement('svg', attr, paths);
