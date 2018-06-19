@@ -1,106 +1,24 @@
 {
-  "_from": "react-iconmoon",
-  "_id": "react-iconmoon@0.0.2",
-  "_inBundle": false,
-  "_integrity": "sha512-oL+6MXRP6MPAvTbfuYRoEPYNZlZBqLLjfE86ML6mm/VIBAP7xzAlCzvZQILOCjaN2s4qPnAiB+Cj5gtlHG0N0A==",
-  "_location": "/react-iconmoon",
-  "_phantomChildren": {
-    "acorn": "5.7.1",
-    "acorn-dynamic-import": "2.0.2",
-    "async": "2.6.1",
-    "big.js": "3.2.0",
-    "camelcase": "1.2.1",
-    "cliui": "2.1.0",
-    "co": "4.6.0",
-    "code-point-at": "1.1.0",
-    "create-react-class": "15.6.3",
-    "decamelize": "1.2.0",
-    "emojis-list": "2.1.0",
-    "enhanced-resolve": "3.4.1",
-    "fbjs": "0.8.17",
-    "get-caller-file": "1.0.2",
-    "interpret": "1.1.0",
-    "json-loader": "0.5.7",
-    "json-stable-stringify": "1.0.1",
-    "json5": "0.5.1",
-    "loader-runner": "2.3.0",
-    "loose-envify": "1.3.1",
-    "memory-fs": "0.4.1",
-    "mkdirp": "0.5.1",
-    "node-libs-browser": "2.1.0",
-    "number-is-nan": "1.0.1",
-    "object-assign": "4.1.1",
-    "os-locale": "1.4.0",
-    "prop-types": "15.6.1",
-    "read-pkg-up": "1.0.1",
-    "require-directory": "2.1.1",
-    "require-main-filename": "1.0.1",
-    "set-blocking": "2.0.0",
-    "strip-ansi": "3.0.1",
-    "tapable": "0.2.8",
-    "uglify-to-browserify": "1.0.2",
-    "watchpack": "1.6.0",
-    "webpack-sources": "1.1.0",
-    "which-module": "1.0.0",
-    "window-size": "0.1.0",
-    "wrap-ansi": "2.1.0",
-    "y18n": "3.2.1"
-  },
-  "_requested": {
-    "type": "tag",
-    "registry": true,
-    "raw": "react-iconmoon",
-    "name": "react-iconmoon",
-    "escapedName": "react-iconmoon",
-    "rawSpec": "",
-    "saveSpec": null,
-    "fetchSpec": "latest"
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-iconmoon/-/react-iconmoon-0.0.2.tgz",
-  "_shasum": "7ab7453f1db68f7e05563e4709eff26c42b0129a",
-  "_spec": "react-iconmoon",
-  "_where": "c:\\Users\\mguler\\Desktop\\Trick\\anketor-app",
-  "author": {
-    "name": "Aykut Kardaş"
-  },
-  "bugs": {
-    "url": "https://github.com/aykutkardas/React-IconMoon/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "react": "^15.5.4",
-    "webpack": "^2.6.1"
-  },
-  "deprecated": false,
+  "name": "react-iconmoon",
+  "version": "0.0.3",
   "description": "IconMoon for React",
-  "devDependencies": {
-    "babel-cli": "^6.24.1",
-    "babel-core": "^6.24.1",
-    "babel-loader": "^7.0.0",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.5.1"
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/aykutkardas/React-IconMoon#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aykutkardas/React-IconMoon.git"
+  },
   "keywords": [
     "React",
     "IconMoon",
     "SVG",
     "Icon"
   ],
+  "author": "Aykut Kardaş",
   "license": "ISC",
-  "main": "index.js",
-  "name": "react-iconmoon",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/aykutkardas/React-IconMoon.git"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "version": "0.0.2"
+  "devDependencies": {
+    "react": "^16.4.1"
+  }
 }
