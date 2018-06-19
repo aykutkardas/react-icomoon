@@ -4,7 +4,7 @@ import React, {
 import Icons from './icons';
 import './icon.css';
 
-class IconMoon extends Component {
+class IcoMoon extends Component {
     render() {
         let key = 0;
         let iconName = this.props.icon;
@@ -22,4 +22,4 @@ class IconMoon extends Component {
     }
 }
 
-export default IconMoon;
+export default IcoMoon;

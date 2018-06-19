@@ -1,26 +1,26 @@
-## React IconMoon
+## React IcoMoon
 
 #### Install
 ```
-npm install react-iconmoon
+npm install react-icomoon
 ```
 
 
 #### Usage
 ```js
-import IconMoon from 'react-iconmoon';
+import IcoMoon from 'react-icomoon';
 
 // ...
 
 class Example extends React.Component {
     render(){
         return (
-            <IconMoon icon="pencil" />
+            <IcoMoon icon="pencil" />
         )
     }
 }
 ```
 
-Visit the IconMoon site to see the icon list.
+Visit the IcoMoon site to see the icon list.
 
 https://icomoon.io/app/

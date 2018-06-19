@@ -1,18 +1,18 @@
 {
-  "name": "react-iconmoon",
-  "version": "0.0.7",
-  "description": "IconMoon for React",
+  "name": "react-icomoon",
+  "version": "1.0.0",
+  "description": "IcoMoon for React",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aykutkardas/React-IconMoon.git"
+    "url": "https://github.com/aykutkardas/React-IcoMoon.git"
   },
   "keywords": [
     "React",
-    "IconMoon",
+    "IcoMoon",
     "SVG",
     "Icon"
   ],
