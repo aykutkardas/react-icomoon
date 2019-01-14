@@ -2,6 +2,9 @@
 
 ![alt text](https://github.com/aykutkardas/React-IcoMoon/blob/v1.0.1/logo.png?raw=true "React IcoMoon")
 
+
+## [Demo](https://codesandbox.io/s/github/aykutkardas/react-icomoon-playground)
+
 #### Install
 ```
 npm install react-icomoon
