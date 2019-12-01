@@ -1,5 +1,5 @@
 import React from "react";
-import Icons from "./icons";
+import iconSetCreator from "./iconSetCreator";
 
 const style = {
   display: "inline-block",
@@ -10,13 +10,24 @@ const style = {
   fill: "currentColor"
 };
 
-const IcoMoon = ({ icon, ...props }) => {
-  const iconPath = Icons.path[icon];
-  const iconViewBox = Icons.viewBox[icon] || "0 0 32 32";
+const IcoMoon = ({ icon, iconSet, ...props }) => {
+
+  let iconPath;
+  let iconViewBox;
+
+  if (iconSet) {
+    const customIcons = iconSetCreator(iconSet);
+    iconPath = customIcons.path[icon];
+    iconViewBox = customIcons.viewBox[icon] || "0 0 32 32";
+  } else {
+    const Icons = require('./icons').default;
+    iconPath = Icons.path[icon] || [];
+    iconViewBox = Icons.viewBox[icon] || "0 0 32 32";
+  }
 
   const attributes = { ...props };
 
-  attributes.className = (props.className || "") + (" icon icon-" + icon);
+  attributes.className = (props.className || "");
   attributes.viewBox = iconViewBox;
   attributes.style = {
     ...style,
