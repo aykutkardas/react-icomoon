@@ -7,7 +7,7 @@ exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
-var _icons = _interopRequireDefault(require("./icons"));
+var _iconSetCreator = _interopRequireDefault(require("./iconSetCreator"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30,14 +30,26 @@ var style = {
 
 var IcoMoon = function IcoMoon(_ref) {
   var icon = _ref.icon,
-      props = _objectWithoutProperties(_ref, ["icon"]);
+      iconSet = _ref.iconSet,
+      props = _objectWithoutProperties(_ref, ["icon", "iconSet"]);
 
-  var iconPath = _icons.default.path[icon];
-  var iconViewBox = _icons.default.viewBox[icon] || "0 0 32 32";
+  var iconPath;
+  var iconViewBox;
+
+  if (iconSet) {
+    var customIcons = (0, _iconSetCreator.default)(iconSet);
+    iconPath = customIcons.path[icon];
+    iconViewBox = customIcons.viewBox[icon] || "0 0 32 32";
+  } else {
+    var Icons = require('./icons').default;
+
+    iconPath = Icons.path[icon] || [];
+    iconViewBox = Icons.viewBox[icon] || "0 0 32 32";
+  }
 
   var attributes = _objectSpread({}, props);
 
-  attributes.className = (props.className || "") + (" icon icon-" + icon);
+  attributes.className = props.className || "";
   attributes.viewBox = iconViewBox;
   attributes.style = _objectSpread({}, style, props.style || {});
   var paths = iconPath.map(function (path, index) {

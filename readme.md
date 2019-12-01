@@ -30,3 +30,29 @@ import IcoMoon from "react-icomoon";
 ```js
 <IcoMoon icon={value ? "play" : "pause"} />
 ```
+
+## Custom IconSet
+
+You can use the icons you selected on IcoMoon by downloading the **selection.json** file.
+
+https://icomoon.io/app/
+
+### Declare
+```js
+// icon.js
+import React from "react";
+import IcoMoon from "react-icomoon";
+const iconSet = require("./selection.json");
+
+const Icon = ({ ...props }) => {
+  return <IcoMoon iconSet={iconSet} {...props} />;
+};
+
+export default Icon;
+```
+### Use
+```js
+import Icon from "./icon";
+
+<Icon icon="focus" />
+```
