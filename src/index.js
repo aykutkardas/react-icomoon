@@ -15,15 +15,7 @@ const IcoMoon = ({ iconSet, icon, size, removeInlineStyle, ...props }) => {
     return null;
   }
 
-  const currentIcon = iconSet.icons.find(item => {
-    if (item.name === icon) {
-      return true;
-    } else if (item.properties.name === icon) {
-      return true;
-    } else {
-      return false;
-    }
-  });
+  const currentIcon = iconSet.icons.find(item => item.properties.name === icon);
 
   if (!currentIcon) {
     return null;
@@ -39,9 +31,9 @@ const IcoMoon = ({ iconSet, icon, size, removeInlineStyle, ...props }) => {
     ...(props.style || {})
   };
 
-  props.viewBox = `0 0 ${currentIcon.width || '1024'} 1024`;
+  props.viewBox = `0 0 ${currentIcon.icon.width || '1024'} 1024`;
 
-  const paths = currentIcon.paths.map((path, index) =>
+  const paths = currentIcon.icon.paths.map((path, index) =>
     createElement("path", {
       d: path,
       key: icon + index
