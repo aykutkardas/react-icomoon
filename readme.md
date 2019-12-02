@@ -12,7 +12,7 @@
 npm install react-icomoon
 ```
 
-Use +498 free icon.
+Use +498 free icons.
 Visit the IcoMoon site to see the icon list.
 
 https://icomoon.io/app/
