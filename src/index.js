@@ -18,7 +18,7 @@ const IcoMoon = ({ iconSet, icon, size, removeInlineStyle, ...props }) => {
   const currentIcon = iconSet.icons.find(item => {
     if (item.name === icon) {
       return true;
-    } else if (Array.isArray(item.tags) && item.tags[0] === icon) {
+    } else if (item.properties.name === icon) {
       return true;
     } else {
       return false;
