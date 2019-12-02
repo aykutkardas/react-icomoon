@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/ --presets @babel/preset-env -d dist/"
+    "build": "babel src/ --presets @babel/preset-env,minify -d dist/"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
-    "@babel/preset-stage-2": "^7.0.0"
+    "@babel/preset-stage-2": "^7.0.0",
+    "babel-preset-minify": "^0.5.1"
   }
 }
