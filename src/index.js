@@ -1,5 +1,4 @@
-import React from "react";
-import iconSetCreator from "./iconSetCreator";
+import { createElement } from "react";
 
 const style = {
   display: "inline-block",
@@ -10,38 +9,46 @@ const style = {
   fill: "currentColor"
 };
 
-const IcoMoon = ({ icon, iconSet, ...props }) => {
+const IcoMoon = ({ iconSet, icon, size, removeInlineStyle, ...props }) => {
 
-  let iconPath;
-  let iconViewBox;
-
-  if (iconSet) {
-    const customIcons = iconSetCreator(iconSet);
-    iconPath = customIcons.path[icon];
-    iconViewBox = customIcons.viewBox[icon] || "0 0 32 32";
-  } else {
-    const Icons = require('./icons').default;
-    iconPath = Icons.path[icon] || [];
-    iconViewBox = Icons.viewBox[icon] || "0 0 32 32";
+  if (!iconSet) {
+    return null;
   }
 
-  const attributes = { ...props };
+  const currentIcon = iconSet.icons.find(item => {
+    if (item.name === icon) {
+      return true;
+    } else if (Array.isArray(item.tags) && item.tags[0] === icon) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
-  attributes.className = (props.className || "");
-  attributes.viewBox = iconViewBox;
-  attributes.style = {
-    ...style,
+  if (!currentIcon) {
+    return null;
+  }
+
+  if (size) {
+    style.width = size;
+    style.height = size;
+  }
+
+  props.style = {
+    ...(removeInlineStyle ? {} : style),
     ...(props.style || {})
   };
 
-  const paths = iconPath.map((path, index) =>
-    React.createElement("path", {
+  props.viewBox = `0 0 ${currentIcon.width || '1024'} 1024`;
+
+  const paths = currentIcon.paths.map((path, index) =>
+    createElement("path", {
       d: path,
-      key: path + index
+      key: icon + index
     })
   );
 
-  return React.createElement('svg', attributes, paths);
+  return createElement('svg', props, paths);
 };
 
 export default IcoMoon;
