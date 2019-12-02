@@ -17,7 +17,10 @@
     "SVG",
     "Icon"
   ],
-  "author": "Aykut Kardaş",
+  "author": {
+    "name": "Aykut Kardaş",
+    "email": "aykutkrds@gmail.com"
+  },
   "license": "Apache-2.0",
   "peerDependencies": {
     "react": "^16.4.1"
