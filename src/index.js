@@ -2,22 +2,21 @@ import { createElement } from "react";
 
 const style = {
   display: "inline-block",
-  width: "1em",
-  height: "1em",
-  strokeWidth: 0,
   stroke: "currentColor",
-  fill: "currentColor"
+  fill: "currentColor",
 };
 
-const IcoMoon = ({ iconSet, icon, size, removeInlineStyle, ...props }) => {
+const IcoMoon = ({ iconSet, icon, size, disableFill, removeInlineStyle, ...props }) => {
 
-  if (!iconSet) {
+  if (!iconSet || !icon) {
+    console.warn('The "iconSet" and "icon" props are required.');
     return null;
   }
 
   const currentIcon = iconSet.icons.find(item => item.properties.name === icon);
 
   if (!currentIcon) {
+    console.warn(`"${icon}" icon not found.`);
     return null;
   }
 
@@ -31,12 +30,15 @@ const IcoMoon = ({ iconSet, icon, size, removeInlineStyle, ...props }) => {
     ...(props.style || {})
   };
 
-  props.viewBox = `0 0 ${currentIcon.icon.width || '1024'} 1024`;
+  const { width = '1024' } = currentIcon.icon;
+
+  props.viewBox = `0 0 ${width} ${width}`;
 
   const paths = currentIcon.icon.paths.map((path, index) =>
     createElement("path", {
       d: path,
-      key: icon + index
+      key: icon + index,
+      ...(!disableFill ? currentIcon.icon.attrs[index] : {}),
     })
   );
 
