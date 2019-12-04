@@ -32,7 +32,7 @@ const IcoMoon = ({ iconSet, icon, size, disableFill, removeInlineStyle, ...props
 
   const { width = '1024' } = currentIcon.icon;
 
-  props.viewBox = `0 0 ${width} ${width}`;
+  props.viewBox = `0 0 ${width} 1024`;
 
   const paths = currentIcon.icon.paths.map((path, index) =>
     createElement("path", {
