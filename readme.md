@@ -9,7 +9,7 @@
 
 With React-Icomoon you can easily use the icons you have selected or created in icomoon.
 
-<!-- ## [Demo](https://codesandbox.io/s/github/aykutkardas/react-icomoon-playground) -->
+## [Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
 
 ## Install
 
