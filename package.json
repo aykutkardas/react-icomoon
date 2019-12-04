@@ -1,11 +1,11 @@
 {
   "name": "react-icomoon",
-  "version": "1.5.2",
+  "version": "2.0.1",
   "description": "IcoMoon for React",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/ --presets @babel/preset-env -d dist/"
+    "build": "babel src/ --presets @babel/preset-env,minify -d dist/"
   },
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "@babel/cli": "^7.2.3",
     "@babel/core": "^7.2.2",
     "@babel/preset-env": "^7.2.3",
-    "@babel/preset-stage-2": "^7.0.0"
+    "@babel/preset-stage-2": "^7.0.0",
+    "babel-preset-minify": "^0.5.1"
   }
 }

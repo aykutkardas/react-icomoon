@@ -1,47 +1,48 @@
-import React from "react";
-import iconSetCreator from "./iconSetCreator";
+import { createElement } from "react";
 
 const style = {
   display: "inline-block",
-  width: "1em",
-  height: "1em",
-  strokeWidth: 0,
   stroke: "currentColor",
-  fill: "currentColor"
+  fill: "currentColor",
 };
 
-const IcoMoon = ({ icon, iconSet, ...props }) => {
+const IcoMoon = ({ iconSet, icon, size, disableFill, removeInlineStyle, ...props }) => {
 
-  let iconPath;
-  let iconViewBox;
-
-  if (iconSet) {
-    const customIcons = iconSetCreator(iconSet);
-    iconPath = customIcons.path[icon];
-    iconViewBox = customIcons.viewBox[icon] || "0 0 32 32";
-  } else {
-    const Icons = require('./icons').default;
-    iconPath = Icons.path[icon] || [];
-    iconViewBox = Icons.viewBox[icon] || "0 0 32 32";
+  if (!iconSet || !icon) {
+    console.warn('The "iconSet" and "icon" props are required.');
+    return null;
   }
 
-  const attributes = { ...props };
+  const currentIcon = iconSet.icons.find(item => item.properties.name === icon);
 
-  attributes.className = (props.className || "");
-  attributes.viewBox = iconViewBox;
-  attributes.style = {
-    ...style,
+  if (!currentIcon) {
+    console.warn(`"${icon}" icon not found.`);
+    return null;
+  }
+
+  if (size) {
+    style.width = size;
+    style.height = size;
+  }
+
+  props.style = {
+    ...(removeInlineStyle ? {} : style),
     ...(props.style || {})
   };
 
-  const paths = iconPath.map((path, index) =>
-    React.createElement("path", {
+  const { width = '1024' } = currentIcon.icon;
+
+  props.viewBox = `0 0 ${width} ${width}`;
+
+  const paths = currentIcon.icon.paths.map((path, index) =>
+    createElement("path", {
       d: path,
-      key: path + index
+      key: icon + index,
+      ...(!disableFill ? currentIcon.icon.attrs[index] : {}),
     })
   );
 
-  return React.createElement('svg', attributes, paths);
+  return createElement('svg', props, paths);
 };
 
 export default IcoMoon;

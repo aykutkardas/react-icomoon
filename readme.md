@@ -2,36 +2,22 @@
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-green.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-![React-IcoMoon Logo](https://github.com/aykutkardas/React-IcoMoon/blob/v1.0.1/logo.png?raw=true "React IcoMoon")
 
-## [Demo](https://codesandbox.io/s/github/aykutkardas/react-icomoon-playground)
+![React-Icomoon Logo](logo.png)
 
-#### Install
+**Size < 2kb** and **0 Dependency**
+
+With React-Icomoon you can easily use the icons you have selected or created in icomoon.
+
+<!-- ## [Demo](https://codesandbox.io/s/github/aykutkardas/react-icomoon-playground) -->
+
+## Install
 
 ```
 npm install react-icomoon
 ```
 
-Use +498 free icons.
-Visit the IcoMoon site to see the icon list.
-
-https://icomoon.io/app/
-
-#### Usage
-
-```js
-import IcoMoon from "react-icomoon";
-```
-
-```js
-<IcoMoon icon="pencil" />
-```
-
-```js
-<IcoMoon icon={value ? "play" : "pause"} />
-```
-
-## Custom IconSet
+## Usage
 
 You can use the icons you selected on IcoMoon by downloading the **selection.json** file.
 
@@ -55,4 +41,26 @@ export default Icon;
 import Icon from "./icon";
 
 <Icon icon="focus" />
+```
+
+## Props List
+| Name              | Type          | Default   | Sample                        |
+|-------------------|---------------|-----------|-------------------------------|
+| iconSet           | Object        | undefined | "selection.json file content" |
+| icon              | String        | undefined | "home"                        |
+| size              | Number,String | undefined | "1em", 10, "100px"            |
+| color             | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
+| style             | Object        | {...}     | { color: '#ff0'}              |
+| className         | String        | undefined | "icomoon"                     |
+| disableFill       | Boolean       | undefined | true                          |
+| removeInlineStyle | Boolean       | undefined | true                          |
+
+
+### Default Style
+```js
+{
+  display: "inline-block",
+  stroke: "currentColor",
+  fill: "currentColor",
+}
 ```
