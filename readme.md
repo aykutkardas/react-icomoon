@@ -49,6 +49,7 @@ import Icon from "./icon";
 | iconSet           | Object        | undefined | "selection.json file content" |
 | icon              | String        | undefined | "home"                        |
 | size              | Number,String | undefined | "1em", 10, "100px"            |
+| color             | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
 | style             | Object        | {...}     | { color: '#ff0'}              |
 | className         | String        | undefined | "icomoon"                     |
 | disableFill       | Boolean       | undefined | true                          |
