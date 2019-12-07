@@ -5,7 +5,7 @@
 
 ![React-Icomoon Logo](logo.png)
 
-**Size < 2kb** and **0 Dependency**
+**Size < 2kb** and **0 Dependencies**
 
 With React-Icomoon you can easily use the icons you have selected or created in icomoon.
 
