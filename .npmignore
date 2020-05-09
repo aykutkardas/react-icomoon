@@ -1,1 +1,3 @@
 src/
+.babelrc
+yarn.lock
