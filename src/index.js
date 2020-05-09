@@ -57,7 +57,7 @@ export default IcoMoon;
 
 export const iconList = (iconSet) => {
   if (iconSet && Array.isArray(iconSet.icons)) {
-    return (iconList = iconSet.icons.map((icon) => icon.properties.name));
+    return iconSet.icons.map((icon) => icon.properties.name);
   }
 
   return null;
