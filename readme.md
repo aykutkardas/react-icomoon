@@ -64,3 +64,30 @@ import Icon from "./icon";
   fill: "currentColor",
 }
 ```
+
+---
+
+## iconList
+
+You can use the iconList method to see a complete list of icons you can use.
+
+```js
+import IcoMoon, { iconList } from "react-icomoon";
+
+iconList(iconSet);
+
+// sample output
+[
+  "document",
+  "camera",
+  "genius",
+  "chat",
+  "heart1",
+  "alarmclock",
+  "star-full",
+  "heart",
+  "play3",
+  "pause2",
+  "bin1"
+]
+```
