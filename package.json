@@ -1,6 +1,6 @@
 {
   "name": "react-icomoon",
-  "version": "2.1.2",
+  "version": "2.1.3",
   "description": "IcoMoon for React",
   "main": "./dist/index.js",
   "scripts": {
