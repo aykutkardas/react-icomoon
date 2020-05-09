@@ -6,14 +6,22 @@ const style = {
   fill: "currentColor",
 };
 
-const IcoMoon = ({ iconSet, icon, size, disableFill, removeInlineStyle, ...props }) => {
-
+const IcoMoon = ({
+  iconSet,
+  icon,
+  size,
+  disableFill,
+  removeInlineStyle,
+  ...props
+}) => {
   if (!iconSet || !icon) {
     console.warn('The "iconSet" and "icon" props are required.');
     return null;
   }
 
-  const currentIcon = iconSet.icons.find(item => item.properties.name === icon);
+  const currentIcon = iconSet.icons.find(
+    (item) => item.properties.name === icon
+  );
 
   if (!currentIcon) {
     console.warn(`"${icon}" icon not found.`);
@@ -27,10 +35,10 @@ const IcoMoon = ({ iconSet, icon, size, disableFill, removeInlineStyle, ...props
 
   props.style = {
     ...(removeInlineStyle ? {} : style),
-    ...(props.style || {})
+    ...(props.style || {}),
   };
 
-  const { width = '1024' } = currentIcon.icon;
+  const { width = "1024" } = currentIcon.icon;
 
   props.viewBox = `0 0 ${width} 1024`;
 
@@ -42,7 +50,15 @@ const IcoMoon = ({ iconSet, icon, size, disableFill, removeInlineStyle, ...props
     })
   );
 
-  return createElement('svg', props, paths);
+  return createElement("svg", props, paths);
 };
 
 export default IcoMoon;
+
+export const iconList = (iconSet) => {
+  if (iconSet && Array.isArray(iconSet.icons)) {
+    return (iconList = iconSet.icons.map((icon) => icon.properties.name));
+  }
+
+  return null;
+};
