@@ -3,9 +3,10 @@
   "version": "2.1.5",
   "description": "IcoMoon for React",
   "main": "./dist/index.js",
+  "typings": "./dist/index.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/ --presets @babel/preset-env,minify -d dist/"
+    "build": "babel --presets @babel/preset-typescript,minify src/index.ts -d dist/ --extensions .ts && tsc --emitDeclarationOnly"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,9 @@
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-stage-2": "^7.8.3",
-    "babel-preset-minify": "^0.5.1"
+    "@babel/preset-typescript": "^7.10.4",
+    "@types/react": "^16.9.46",
+    "babel-preset-minify": "^0.5.1",
+    "typescript": "^4.0.2"
   }
 }
