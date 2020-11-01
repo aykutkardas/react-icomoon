@@ -1,4 +1,4 @@
-import { createElement } from 'react';
+import { createElement } from "react";
 
 const style: {
   display: string;
@@ -7,48 +7,43 @@ const style: {
   width?: string | number;
   height?: string | number;
 } = {
-  display: 'inline-block',
-  stroke: 'currentColor',
-  fill: 'currentColor'
+  display: "inline-block",
+  stroke: "currentColor",
+  fill: "currentColor",
 };
-
-interface Attr {
-  fill: string;
-}
-
-interface Properties {
-  order: number;
-  id: number;
-  name: string;
-  prevSize: number;
-  code: number;
-}
 
 interface Icon {
   paths: string[];
-  attrs: Attr[];
-  isMulticolor: boolean;
-  isMulticolor2: boolean;
   grid: number;
   tags: string[];
+  defaultCode: number;
+  attrs?: any[];
   width?: string;
 }
 
 interface Icons {
   icon: Icon;
-  attrs: Attr[];
-  properties: Properties;
+  attrs?: any[];
+  properties: object;
   setIdx: number;
   setId: number;
   iconIdx: number;
 }
 
+interface MetaData {
+  name: string;
+  importSize?: { width: number; height: number };
+  iconsHash?: number;
+}
+
 interface IconSet {
-  IcoMoonType: string;
-  icons: Icons[];
+  metadata: MetaData;
   height: number;
-  metadata: any;
-  preferences: any;
+  prevSize?: number;
+  icons: Icons[];
+  IcoMoonType: string;
+  colorThemes?: any[];
+  preferences: object;
 }
 
 export interface IcoMoonProps {
@@ -75,7 +70,7 @@ const IcoMoon: React.FC<IcoMoonProps> = ({
   }
 
   const currentIcon = iconSet.icons.find(
-    (item) => item.properties.name === icon
+    (icons) => icons.icon.tags[0] === icon
   );
 
   if (!currentIcon) {
@@ -90,29 +85,29 @@ const IcoMoon: React.FC<IcoMoonProps> = ({
 
   props.style = {
     ...(removeInlineStyle ? {} : style),
-    ...(props.style || {})
+    ...(props.style || {}),
   };
 
-  const { width = '1024' } = currentIcon.icon;
+  const { width = "1024" } = currentIcon.icon;
 
   props.viewBox = `0 0 ${width} 1024`;
 
   const paths = currentIcon.icon.paths.map(<T>(path: T, index: number) =>
-    createElement('path', {
+    createElement("path", {
       d: path,
       key: icon + index,
-      ...(!disableFill ? currentIcon.icon.attrs[index] : {})
+      ...(!disableFill ? currentIcon : {}),
     })
   );
 
-  return createElement('svg', props, paths);
+  return createElement("svg", props, paths);
 };
 
 export default IcoMoon;
 
 export const iconList = (iconSet: IconSet) => {
   if (iconSet && Array.isArray(iconSet.icons)) {
-    return iconSet.icons.map((icon) => icon.properties.name);
+    return iconSet.icons.map((icon) => icon.icon.tags[0]);
   }
 
   return null;
