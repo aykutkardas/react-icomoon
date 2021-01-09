@@ -1,7 +1,7 @@
 # React-IcoMoon
 
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
-
+![npm](https://img.shields.io/npm/dw/react-icomoon)
 
 ![React-Icomoon Logo](https://raw.githubusercontent.com/aykutkardas/React-IcoMoon/master/logo.png)
 
@@ -24,6 +24,7 @@ You can use the icons you selected on IcoMoon by downloading the **selection.jso
 https://icomoon.io/app/
 
 ### Declare
+
 ```js
 // icon.js
 import React from "react";
@@ -36,16 +37,19 @@ const Icon = ({ ...props }) => {
 
 export default Icon;
 ```
+
 ### Use
+
 ```js
 import Icon from "./icon";
 
-<Icon icon="pencil" size={20} color="orange" />
+<Icon icon="pencil" size={20} color="orange" />;
 ```
 
 ## Props List
+
 | Name              | Type          | Default   | Sample                        |
-|-------------------|---------------|-----------|-------------------------------|
+| ----------------- | ------------- | --------- | ----------------------------- |
 | iconSet           | Object        | undefined | "selection.json file content" |
 | icon              | String        | undefined | "home"                        |
 | size              | Number,String | undefined | "1em", 10, "100px"            |
@@ -55,8 +59,8 @@ import Icon from "./icon";
 | disableFill       | Boolean       | undefined | true                          |
 | removeInlineStyle | Boolean       | undefined | true                          |
 
-
 ### Default Style
+
 ```js
 {
   display: "inline-block",
@@ -64,8 +68,6 @@ import Icon from "./icon";
   fill: "currentColor",
 }
 ```
-
----
 
 ## iconList
 
@@ -88,13 +90,11 @@ iconList(iconSet);
   "heart",
   "play3",
   "pause2",
-  "bin1"
-]
+  "bin1",
+];
 ```
 
----
-
-## React Native 🎉 • [Demo](https://snack.expo.io/@aykutkardas/react-icomoon) 
+## React Native 🎉 • [Demo](https://snack.expo.io/@aykutkardas/react-icomoon)
 
 **Step 1:** Install Dependencies
 
@@ -103,12 +103,13 @@ npm install react-icomoon react-native-svg
 ```
 
 **Step 2:** Declare
+
 ```js
 // icon.js
-import React from 'react';
-import IcoMoon from 'react-icomoon';
-import { Svg, Path } from 'react-native-svg';
-const iconSet = require('./selection.json');
+import React from "react";
+import IcoMoon from "react-icomoon";
+import { Svg, Path } from "react-native-svg";
+const iconSet = require("./selection.json");
 
 const Icon = ({ ...props }) => {
   return (
@@ -126,8 +127,9 @@ export default Icon;
 ```
 
 **Step 3:** Usage
+
 ```js
 import Icon from "./icon";
 
-<Icon icon="pencil" size={100} color="orange" />
+<Icon icon="pencil" size={20} color="orange" />;
 ```
