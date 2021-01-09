@@ -4,6 +4,7 @@
 ![npm](https://img.shields.io/npm/dw/react-icomoon)
 ![size](https://img.shields.io/bundlephobia/min/react-icomoon?color=%234fc921)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+
 ![React-Icomoon Logo](https://raw.githubusercontent.com/aykutkardas/React-IcoMoon/master/logo.png)
 
 **📦 Zero Dependencies**
