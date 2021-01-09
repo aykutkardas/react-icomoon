@@ -1,4 +1,4 @@
-import { createElement } from "react";
+import React, { createElement } from "react";
 
 const style = {
   display: "inline-block",
@@ -12,6 +12,8 @@ const IcoMoon = ({
   size,
   disableFill,
   removeInlineStyle,
+  SvgComponent,
+  PathComponent,
   ...props
 }) => {
   if (!iconSet || !icon) {
@@ -42,15 +44,21 @@ const IcoMoon = ({
 
   props.viewBox = `0 0 ${width} 1024`;
 
-  const paths = currentIcon.icon.paths.map((path, index) =>
-    createElement("path", {
+  const paths = currentIcon.icon.paths.map((path, index) => {
+    const pathProps = {
       d: path,
       key: icon + index,
       ...(!disableFill ? currentIcon.icon.attrs[index] : {}),
-    })
-  );
+    };
 
-  return createElement("svg", props, paths);
+    return PathComponent
+      ? <PathComponent {...pathProps} />
+      : createElement("path", pathProps);
+  });
+
+  return SvgComponent
+    ? <SvgComponent {...props} children={paths} />
+    : createElement("svg", props, paths);
 };
 
 export default IcoMoon;
