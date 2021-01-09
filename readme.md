@@ -96,15 +96,13 @@ iconList(iconSet);
 
 ## React Native 🎉 • [Demo](https://snack.expo.io/@aykutkardas/react-icomoon) 
 
-## 
-
-Step 1: Install Dependencies
+**Step 1:** Install Dependencies
 
 ```
 npm install react-icomoon react-native-svg
 ```
 
-Step 2: Declare
+**Step 2:** Declare
 ```js
 // icon.js
 import React from 'react';
@@ -127,7 +125,7 @@ const Icon = ({ ...props }) => {
 export default Icon;
 ```
 
-Step 3: Usage
+**Step 3:** Usage
 ```js
 import Icon from "./icon";
 
