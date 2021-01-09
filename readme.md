@@ -1,11 +1,12 @@
 # React-IcoMoon
 
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![npm](https://img.shields.io/npm/v/react-icomoon?color=%234fc921)](https://www.npmjs.com/package/react-icomoon)
 ![npm](https://img.shields.io/npm/dw/react-icomoon)
-
+![size](https://img.shields.io/bundlephobia/min/react-icomoon?color=%234fc921)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 ![React-Icomoon Logo](https://raw.githubusercontent.com/aykutkardas/React-IcoMoon/master/logo.png)
 
-**Size < 2kb** and **0 Dependencies**
+**📦 Zero Dependencies**
 
 With React-Icomoon you can easily use the icons you have selected or created in icomoon.
 
@@ -19,7 +20,7 @@ npm install react-icomoon
 
 ## Usage
 
-You can use the icons you selected on IcoMoon by downloading the **selection.json** file.
+You can use the icons you selected on IcoMoon by downloading the `selection.json` file.
 
 https://icomoon.io/app/
 
