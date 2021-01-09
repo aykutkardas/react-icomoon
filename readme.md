@@ -40,7 +40,7 @@ export default Icon;
 ```js
 import Icon from "./icon";
 
-<Icon icon="focus" />
+<Icon icon="pencil" size={20} color="orange" />
 ```
 
 ## Props List
@@ -90,4 +90,46 @@ iconList(iconSet);
   "pause2",
   "bin1"
 ]
+```
+
+---
+
+## React Native 🎉 • [Demo](https://snack.expo.io/@aykutkardas/react-icomoon) 
+
+## 
+
+Step 1: Install Dependencies
+
+```
+npm install react-icomoon react-native-svg
+```
+
+Step 2: Declare
+```js
+// icon.js
+import React from 'react';
+import IcoMoon from 'react-icomoon';
+import { Svg, Path } from 'react-native-svg';
+const iconSet = require('./selection.json');
+
+const Icon = ({ ...props }) => {
+  return (
+    <IcoMoon
+      native
+      iconSet={iconSet}
+      SvgComponent={Svg}
+      PathComponent={Path}
+      {...props}
+    />
+  );
+};
+
+export default Icon;
+```
+
+Step 3: Usage
+```js
+import Icon from "./icon";
+
+<Icon icon="pencil" size={100} color="orange" />
 ```
