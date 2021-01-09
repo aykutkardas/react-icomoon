@@ -35,6 +35,12 @@ const IcoMoon = ({
     style.height = size;
   }
 
+  if (props.native) {
+    style.display = "flex";
+    style.flexDirection = "row";
+    style.flexWrap = "wrap";
+  }
+
   props.style = {
     ...(removeInlineStyle ? {} : style),
     ...(props.style || {}),
