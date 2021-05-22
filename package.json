@@ -5,7 +5,7 @@
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel src/ --presets @babel/preset-env,minify -d dist/"
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
@@ -31,6 +31,7 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.12.10",
     "@babel/preset-stage-2": "^7.8.3",
+    "@types/react": "^17.0.6",
     "babel-preset-minify": "^0.5.1"
   }
 }

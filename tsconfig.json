@@ -1,0 +1,13 @@
+{
+  "include": ["src/*"],
+  "compilerOptions": {
+    "target": "es5",
+    "jsx": "react-jsx",
+    "lib": ["ES2015"],
+    "allowSyntheticDefaultImports": true,
+    "outDir": "dist/",
+    "declaration": true,
+    "declarationDir": "dist/",
+    "sourceMap": true
+  }
+}

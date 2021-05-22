@@ -1,12 +1,31 @@
 import React, { createElement } from "react";
 
-const style = {
+type IconSetItem = {
+  properties: {
+    name: "string";
+  };
+  icon: { paths: []; attrs: []; width?: string };
+};
+
+type IconSet = {
+  icons: IconSetItem[];
+};
+
+const style: React.CSSProperties = {
   display: "inline-block",
   stroke: "currentColor",
   fill: "currentColor",
 };
 
-const IcoMoon = ({
+const IcoMoon: React.FC<{
+  iconSet: IconSet;
+  icon: string;
+  color?: string;
+  size?: string | number;
+  className?: string;
+  style?: React.CSSProperties;
+  [name: string]: any;
+}> = ({
   iconSet,
   icon,
   size,
@@ -16,19 +35,13 @@ const IcoMoon = ({
   PathComponent,
   ...props
 }) => {
-  if (!iconSet || !icon) {
-    console.warn('The "iconSet" and "icon" props are required.');
-    return null;
-  }
+  if (!iconSet || !icon) return null;
 
   const currentIcon = iconSet.icons.find(
     (item) => item.properties.name === icon
   );
 
-  if (!currentIcon) {
-    console.warn(`"${icon}" icon not found.`);
-    return null;
-  }
+  if (!currentIcon) return null;
 
   if (size) {
     style.width = size;
@@ -58,16 +71,14 @@ const IcoMoon = ({
     };
 
     return PathComponent
-      ? <PathComponent {...pathProps} />
+      ? createElement(PathComponent, pathProps)
       : createElement("path", pathProps);
   });
 
   return SvgComponent
-    ? <SvgComponent {...props} children={paths} />
+    ? createElement(SvgComponent, props, paths)
     : createElement("svg", props, paths);
 };
-
-export default IcoMoon;
 
 export const iconList = (iconSet) => {
   if (iconSet && Array.isArray(iconSet.icons)) {
@@ -76,3 +87,5 @@ export const iconList = (iconSet) => {
 
   return null;
 };
+
+export default IcoMoon;
