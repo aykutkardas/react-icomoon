@@ -1,7 +1,7 @@
 {
   "name": "react-icomoon",
   "version": "2.3.0",
-  "description": "IcoMoon for React",
+  "description": "It allows you to simply view the icons in the selection.json file provided by Icomoon.",
   "main": "./dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
