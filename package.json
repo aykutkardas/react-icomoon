@@ -1,6 +1,6 @@
 {
   "name": "react-icomoon",
-  "version": "2.3.4",
+  "version": "2.3.5",
   "description": "It allows you to simply view the icons in the selection.json file provided by Icomoon.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
