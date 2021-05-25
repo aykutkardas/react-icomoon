@@ -1,23 +1,23 @@
-import React, { createElement } from "react";
+import React, { createElement, CSSProperties, FunctionComponent } from "react";
 
 type IconSetItem = {
   properties: {
     name: string;
   };
-  icon: { paths: []; attrs: []; width?: string };
+  icon: { paths: string[]; attrs: Object[]; width?: number | string };
 };
 
 type IconSet = {
   icons: IconSetItem[];
 };
 
-const style: React.CSSProperties = {
+const style: CSSProperties = {
   display: "inline-block",
   stroke: "currentColor",
   fill: "currentColor",
 };
 
-const IcoMoon: React.FC<{
+const IcoMoon: FunctionComponent<{
   iconSet: IconSet;
   icon: string;
   color?: string;
