@@ -2,7 +2,7 @@ import React, { createElement } from "react";
 
 type IconSetItem = {
   properties: {
-    name: "string";
+    name: string;
   };
   icon: { paths: []; attrs: []; width?: string };
 };
