@@ -99,21 +99,21 @@ iconList(iconSet);
 
 ## React Native 🎉 • [Demo](https://snack.expo.io/@aykutkardas/react-icomoon)
 
-**Step 1:** Install Dependencies
+### **Step 1:** Install Dependencies
 
 ```
 npm install react-icomoon react-native-svg
 ```
 
-## Additional props for React Native
+### **Step 2:** Declare
+
+#### Additional props for React Native
 
 | Name          | Type            | Default   | Sample        |
 | ------------- | --------------- | --------- | ------------- |
 | native        | Boolean         | undefined | true          |
 | SvgComponent  | React.Component | undefined | SvgComponent  |
 | PathComponent | React.Component | undefined | PathComponent |
-
-**Step 2:** Declare
 
 ```js
 // icon.js
