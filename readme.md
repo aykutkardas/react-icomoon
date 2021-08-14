@@ -3,7 +3,7 @@
 [![npm](https://img.shields.io/npm/v/react-icomoon?color=%234fc921)](https://www.npmjs.com/package/react-icomoon)
 ![npm](https://img.shields.io/npm/dw/react-icomoon)
 ![size](https://img.shields.io/bundlephobia/min/react-icomoon?color=%234fc921)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
 
 ![React-Icomoon Logo](https://raw.githubusercontent.com/aykutkardas/React-IcoMoon/master/logo.png)
 
@@ -57,6 +57,7 @@ import Icon from "./icon";
 | size              | Number,String | undefined | "1em", 10, "100px"            |
 | color             | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
 | style             | Object        | {...}     | { color: '#ff0'}              |
+| title             | String        | undefined | "Icon Title"                  |
 | className         | String        | undefined | "icomoon"                     |
 | disableFill       | Boolean       | undefined | true                          |
 | removeInlineStyle | Boolean       | undefined | true                          |
@@ -104,6 +105,14 @@ iconList(iconSet);
 npm install react-icomoon react-native-svg
 ```
 
+## Additional props for React Native
+
+| Name          | Type            | Default   | Sample        |
+| ------------- | --------------- | --------- | ------------- |
+| native        | Boolean         | undefined | true          |
+| SvgComponent  | React.Component | undefined | SvgComponent  |
+| PathComponent | React.Component | undefined | PathComponent |
+
 **Step 2:** Declare
 
 ```js
@@ -117,9 +126,9 @@ const Icon = ({ ...props }) => {
   return (
     <IcoMoon
       native
-      iconSet={iconSet}
       SvgComponent={Svg}
       PathComponent={Path}
+      iconSet={iconSet}
       {...props}
     />
   );

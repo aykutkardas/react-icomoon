@@ -29,8 +29,10 @@ const IcoMoon: FunctionComponent<{
   iconSet,
   icon,
   size,
+  title,
   disableFill,
   removeInlineStyle,
+  native,
   SvgComponent,
   PathComponent,
   ...props
@@ -48,7 +50,7 @@ const IcoMoon: FunctionComponent<{
     style.height = size;
   }
 
-  if (props.native) {
+  if (native) {
     style.display = "flex";
     style.flexDirection = "row";
     style.flexWrap = "wrap";
@@ -63,7 +65,7 @@ const IcoMoon: FunctionComponent<{
 
   props.viewBox = `0 0 ${width} 1024`;
 
-  const paths = currentIcon.icon.paths.map((path, index) => {
+  const childs = currentIcon.icon.paths.map((path, index) => {
     const pathProps = {
       d: path,
       key: icon + index,
@@ -75,9 +77,13 @@ const IcoMoon: FunctionComponent<{
       : createElement("path", pathProps);
   });
 
+  if (title && !native) {
+    childs.push(createElement("title", null, title));
+  }
+
   return SvgComponent
-    ? createElement(SvgComponent, props, paths)
-    : createElement("svg", props, paths);
+    ? createElement(SvgComponent, props, childs)
+    : createElement("svg", props, childs);
 };
 
 export const iconList = (iconSet) => {
