@@ -78,7 +78,7 @@ const IcoMoon: FunctionComponent<{
   });
 
   if (title && !native) {
-    childs.push(createElement("title", null, title));
+    childs.push(createElement("title", { key: title }, title));
   }
 
   return SvgComponent
