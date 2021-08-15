@@ -1,8 +1,8 @@
 # React-IcoMoon
 
+[![Build Status](https://github.com/aykutkardas/react-icomoon/workflows/build/badge.svg?color=%234fc921)](https://github.com/aykutkardas/react-icomoon/actions)
 [![npm](https://img.shields.io/npm/v/react-icomoon?color=%234fc921)](https://www.npmjs.com/package/react-icomoon)
 ![npm](https://img.shields.io/npm/dw/react-icomoon)
-[![Build Status](https://github.com/aykutkardas/react-icomoon/workflows/build/badge.svg?color=%234fc921)](https://github.com/aykutkardas/react-icomoon/actions)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
 
 ![React-Icomoon Logo](https://raw.githubusercontent.com/aykutkardas/React-IcoMoon/master/logo.png)
