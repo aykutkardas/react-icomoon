@@ -3,3 +3,4 @@ tsconfig.json
 .babelrc
 yarn.lock
 logo.png
+.github
