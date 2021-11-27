@@ -45,11 +45,6 @@ const IcoMoon: FunctionComponent<{
 
   if (!currentIcon) return null;
 
-  if (size) {
-    style.width = size;
-    style.height = size;
-  }
-
   if (native) {
     style.display = "flex";
     style.flexDirection = "row";
@@ -58,6 +53,7 @@ const IcoMoon: FunctionComponent<{
 
   props.style = {
     ...(removeInlineStyle ? {} : style),
+    ...(size ? { width: size, height: size } : {}),
     ...(props.style || {}),
   };
 
