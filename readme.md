@@ -1,15 +1,11 @@
-# React-IcoMoon
+![React-Icomoon Logo](/banner.png)
 
 [![Build Status](https://github.com/aykutkardas/react-icomoon/workflows/build/badge.svg?color=%234fc921)](https://github.com/aykutkardas/react-icomoon/actions)
 [![npm](https://img.shields.io/npm/v/react-icomoon?color=%234fc921)](https://www.npmjs.com/package/react-icomoon)
 ![npm](https://img.shields.io/npm/dw/react-icomoon)
 [![License](https://img.shields.io/badge/License-MIT-green.svg?color=%234fc921)](https://opensource.org/licenses/MIT)
 
-![React-Icomoon Logo](https://raw.githubusercontent.com/aykutkardas/React-IcoMoon/master/logo.png)
-
-**📦 Zero Dependencies**
-
-With React-Icomoon you can easily use the icons you have selected or created in icomoon.
+It makes it very simple to use SVG icons in your `React` and `React-Native` projects.
 
 ## [Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
 
@@ -17,6 +13,10 @@ With React-Icomoon you can easily use the icons you have selected or created in 
 
 ```
 npm install react-icomoon
+```
+
+```
+yarn add react-icomoon
 ```
 
 ## Usage
@@ -28,14 +28,11 @@ https://icomoon.io/app/
 ### Declare
 
 ```js
-// icon.js
-import React from "react";
+// Icon.jsx
 import IcoMoon from "react-icomoon";
 const iconSet = require("./selection.json");
 
-const Icon = ({ ...props }) => {
-  return <IcoMoon iconSet={iconSet} {...props} />;
-};
+const Icon = ({ ...props }) => <IcoMoon iconSet={iconSet} {...props} />;
 
 export default Icon;
 ```
@@ -50,17 +47,17 @@ import Icon from "./icon";
 
 ## Props List
 
-| Name              | Type          | Default   | Sample                        |
-| ----------------- | ------------- | --------- | ----------------------------- |
-| iconSet           | Object        | undefined | "selection.json file content" |
-| icon              | String        | undefined | "home"                        |
-| size              | Number,String | undefined | "1em", 10, "100px"            |
-| color             | String        | undefined | "red", "#f00", "rgb(0,0,0)"   |
-| style             | Object        | {...}     | { color: '#ff0'}              |
-| title             | String        | undefined | "Icon Title"                  |
-| className         | String        | undefined | "icomoon"                     |
-| disableFill       | Boolean       | undefined | true                          |
-| removeInlineStyle | Boolean       | undefined | true                          |
+| Name              | Type          | Default | Sample                        |
+| ----------------- | ------------- | ------- | ----------------------------- |
+| iconSet           | Object        | -       | "selection.json file content" |
+| icon              | String        | -       | "home"                        |
+| size              | Number,String | -       | "1em", 10, "100px"            |
+| color             | String        | -       | "red", "#f00", "rgb(0,0,0)"   |
+| style             | Object        | {...}   | { color: '#ff0'}              |
+| title             | String        | -       | "Icon Title"                  |
+| className         | String        | -       | "icomoon"                     |
+| disableFill       | Boolean       | -       | true                          |
+| removeInlineStyle | Boolean       | -       | true                          |
 
 ### Default Style
 
@@ -105,39 +102,40 @@ iconList(iconSet);
 npm install react-icomoon react-native-svg
 ```
 
+```
+yarn add react-icomoon react-native-svg
+```
+
 ### **Step 2:** Declare
 
 #### Additional props for React Native
 
-| Name          | Type            | Default   | Sample        |
-| ------------- | --------------- | --------- | ------------- |
-| native        | Boolean         | undefined | true          |
-| SvgComponent  | React.Component | undefined | SvgComponent  |
-| PathComponent | React.Component | undefined | PathComponent |
+| Name          | Type            | Default | Sample        |
+| ------------- | --------------- | ------- | ------------- |
+| native        | Boolean         | -       | true          |
+| SvgComponent  | React.Component | -       | SvgComponent  |
+| PathComponent | React.Component | -       | PathComponent |
 
 ```js
-// icon.js
-import React from "react";
+// Icon.jsx
 import IcoMoon from "react-icomoon";
 import { Svg, Path } from "react-native-svg";
 const iconSet = require("./selection.json");
 
-const Icon = ({ ...props }) => {
-  return (
-    <IcoMoon
-      native
-      SvgComponent={Svg}
-      PathComponent={Path}
-      iconSet={iconSet}
-      {...props}
-    />
-  );
-};
+const Icon = ({ ...props }) => (
+  <IcoMoon
+    native
+    SvgComponent={Svg}
+    PathComponent={Path}
+    iconSet={iconSet}
+    {...props}
+  />
+);
 
 export default Icon;
 ```
 
-**Step 3:** Usage
+**Step 3:** Use
 
 ```js
 import Icon from "./icon";
