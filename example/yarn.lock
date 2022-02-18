@@ -6912,8 +6912,10 @@ react-highlight@^0.14.0:
   dependencies:
     highlight.js "^10.5.0"
 
-react-icomoon@../:
-  version "2.4.3"
+react-icomoon@^2.4.4:
+  version "2.4.4"
+  resolved "https://registry.yarnpkg.com/react-icomoon/-/react-icomoon-2.4.4.tgz#163c5deb1e7e72d0b70f71d6c11c3b840200ff18"
+  integrity sha512-7gErctyQ37V1tSySHRpU2eZHFPr+pztityyCQuYiNA7QqPr4NAQ0P6pptq5VPPigcVq67GlODfOehoQLY0gW1Q==
 
 react-is@^16.13.1:
   version "16.13.1"
