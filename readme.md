@@ -7,7 +7,7 @@
 
 It makes it very simple to use SVG icons in your `React` and `React-Native` projects.
 
-## [Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
+### [Cheatsheet](https://react-icomoon.vercel.app/) - [Interactive Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
 
 ## Install
 
@@ -32,7 +32,9 @@ https://icomoon.io/app/
 import IcoMoon from "react-icomoon";
 const iconSet = require("./selection.json");
 
-const Icon = ({ ...props }) => <IcoMoon iconSet={iconSet} {...props} />;
+const Icon = ({ ...props }) => (
+  <IcoMoon iconSet={iconSet} {...props} />
+);
 
 export default Icon;
 ```
