@@ -1,0 +1,86 @@
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #282c34;
+}
+
+img {
+  max-width: 100%;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  color: white;
+}
+
+h4 {
+  margin: 0;
+}
+
+a {
+  color: #5096ec;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+a + a {
+  margin-left: 10px;
+}
+
+.Demo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.Demo p {
+  font-size: 15px;
+}
+
+pre {
+  width: 100%;
+  margin: 5px 0;
+  padding: 0 10px;
+  border-radius: 5px;
+}
+
+pre,
+pre code.hljs {
+  background-color: #222;
+}
+
+.IconsWrapper {
+  display: flex;
+  width: 300px;
+  padding: 0 1em;
+  width: 100%;
+  background-color: #222;
+  padding: 10px;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.IconsWrapper svg {
+  margin-right: 30px;
+}
+
+.edit-icon {
+  width: 30px;
+  height: 30px;
+  color: #5096ec;
+}
+
+.edit-icon:hover {
+  color: #ffffff;
+}

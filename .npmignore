@@ -4,3 +4,4 @@ tsconfig.json
 yarn.lock
 logo.png
 .github
+example/
