@@ -51,7 +51,21 @@ const App = () => (
 import IcoMoon from "react-icomoon";
 const iconSet = require("./selection.json");
 
-const Icon = ({ ...props }) => (
+const Icon = (props) => (
+  <IcoMoon iconSet={iconSet} {...props} />
+);
+
+export default Icon;
+        `}
+      </Highlight>
+
+      <h5>with TypeScript</h5>
+      <Highlight className="react">
+        {`
+import IcoMoon from "react-icomoon";
+const iconSet = require("./selection.json");
+
+const Icon: typeof IcoMoon = (props) => (
   <IcoMoon iconSet={iconSet} {...props} />
 );
 

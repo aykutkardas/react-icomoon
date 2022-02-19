@@ -32,7 +32,19 @@ https://icomoon.io/app/
 import IcoMoon from "react-icomoon";
 const iconSet = require("./selection.json");
 
-const Icon = ({ ...props }) => (
+const Icon = (props) => <IcoMoon iconSet={iconSet} {...props} />;
+
+export default Icon;
+```
+
+#### With TypeScript
+
+```tsx
+// Icon.tsx
+import IcoMoon from "react-icomoon";
+const iconSet = require("./selection.json");
+
+const Icon: typeof IcoMoon = (props) => (
   <IcoMoon iconSet={iconSet} {...props} />
 );
 
@@ -124,7 +136,7 @@ import IcoMoon from "react-icomoon";
 import { Svg, Path } from "react-native-svg";
 const iconSet = require("./selection.json");
 
-const Icon = ({ ...props }) => (
+const Icon = (props) => (
   <IcoMoon
     native
     SvgComponent={Svg}
