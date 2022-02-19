@@ -62,10 +62,10 @@ export default Icon;
       <h5>with TypeScript</h5>
       <Highlight className="react">
         {`
-import IcoMoon from "react-icomoon";
+import IcoMoon, { IconComponent } from "react-icomoon";
 const iconSet = require("./selection.json");
 
-const Icon: typeof IcoMoon = (props) => (
+const Icon: typeof IconComponent = (props) => (
   <IcoMoon iconSet={iconSet} {...props} />
 );
 

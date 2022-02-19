@@ -41,10 +41,10 @@ export default Icon;
 
 ```tsx
 // Icon.tsx
-import IcoMoon from "react-icomoon";
+import IcoMoon, { IconComponent } from "react-icomoon";
 const iconSet = require("./selection.json");
 
-const Icon: typeof IcoMoon = (props) => (
+const Icon: typeof IconComponent = (props) => (
   <IcoMoon iconSet={iconSet} {...props} />
 );
 
