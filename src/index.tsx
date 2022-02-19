@@ -1,4 +1,10 @@
-import { createElement, CSSProperties } from "react";
+import {
+  createElement,
+  CSSProperties,
+  SVGProps,
+  ReactElement,
+  JSXElementConstructor,
+} from "react";
 
 type IconSetItem = {
   properties: {
@@ -15,14 +21,16 @@ type IconSet = {
   icons: IconSetItem[];
 };
 
-interface IcoMoonProps {
+interface IcoMoonProps extends SVGProps<SVGElement> {
   iconSet: IconSet;
   icon: string;
-  color?: string;
   size?: string | number;
-  className?: string;
-  style?: CSSProperties;
-  [name: string]: any;
+  title?: string;
+  disableFill?: boolean;
+  removeInlineStyle?: boolean;
+  native?: boolean;
+  SvgComponent?: JSXElementConstructor<any>;
+  PathComponent?: JSXElementConstructor<any>;
 }
 
 const style: CSSProperties = {
@@ -31,7 +39,9 @@ const style: CSSProperties = {
   fill: "currentColor",
 };
 
-const IcoMoon = ({
+type IcoMoonType = (props: IcoMoonProps) => ReactElement;
+
+const IcoMoon: IcoMoonType = ({
   iconSet,
   icon,
   size,
@@ -42,7 +52,7 @@ const IcoMoon = ({
   SvgComponent,
   PathComponent,
   ...props
-}: IcoMoonProps) => {
+}) => {
   if (!iconSet || !icon) return null;
 
   const currentIcon = iconSet.icons.find(
