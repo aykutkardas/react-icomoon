@@ -21,8 +21,7 @@ type IconSet = {
   icons: IconSetItem[];
 };
 
-interface IcoMoonProps extends SVGProps<SVGElement> {
-  iconSet: IconSet;
+interface IconProps extends SVGProps<SVGElement> {
   icon: string;
   size?: string | number;
   title?: string;
@@ -33,15 +32,17 @@ interface IcoMoonProps extends SVGProps<SVGElement> {
   PathComponent?: JSXElementConstructor<any>;
 }
 
+interface IcoMoonProps extends IconProps {
+  iconSet: IconSet;
+}
+
 const style: CSSProperties = {
   display: "inline-block",
   stroke: "currentColor",
   fill: "currentColor",
 };
 
-type IcoMoonType = (props: IcoMoonProps) => ReactElement;
-
-const IcoMoon: IcoMoonType = ({
+const IcoMoon = ({
   iconSet,
   icon,
   size,
@@ -52,7 +53,7 @@ const IcoMoon: IcoMoonType = ({
   SvgComponent,
   PathComponent,
   ...props
-}) => {
+}: IcoMoonProps) => {
   if (!iconSet || !icon) return null;
 
   const currentIcon = iconSet.icons.find(
@@ -94,7 +95,11 @@ const IcoMoon: IcoMoonType = ({
   return createElement(SvgComponent || "svg", props, children);
 };
 
-export const iconList = (iconSet) => {
+type IconType = (props: IconProps) => ReactElement;
+
+export const IconComponent: IconType = () => null;
+
+export const iconList = (iconSet: IconSet) => {
   if (!iconSet || !Array.isArray(iconSet.icons)) return null;
 
   return iconSet.icons.map((icon) => icon.properties.name);
