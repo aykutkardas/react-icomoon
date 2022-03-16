@@ -21,7 +21,7 @@ type IconSet = {
   icons: IconSetItem[];
 };
 
-interface IconProps extends SVGProps<SVGElement> {
+export interface IconProps extends SVGProps<SVGElement> {
   icon: string;
   size?: string | number;
   title?: string;
