@@ -95,10 +95,6 @@ const IcoMoon = ({
   return createElement(SvgComponent || "svg", props, children);
 };
 
-type IconType = (props: IconProps) => ReactElement;
-
-export const IconComponent: IconType = () => null;
-
 export const iconList = (iconSet: IconSet) => {
   if (!iconSet || !Array.isArray(iconSet.icons)) return null;
 
