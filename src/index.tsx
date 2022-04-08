@@ -2,7 +2,6 @@ import {
   createElement,
   CSSProperties,
   SVGProps,
-  ReactElement,
   JSXElementConstructor,
 } from "react";
 
@@ -12,7 +11,7 @@ type IconSetItem = {
   };
   icon: {
     paths: string[];
-    attrs: Object[];
+    attrs?: Object[];
     width?: number | string;
   };
 };
@@ -79,10 +78,12 @@ const IcoMoon = ({
   props.viewBox = `0 0 ${width} 1024`;
 
   const children = currentIcon.icon.paths.map((path, index) => {
+    const attrs = currentIcon.icon.attrs?.[index];
+
     const pathProps = {
       d: path,
       key: icon + index,
-      ...(!disableFill ? currentIcon.icon.attrs[index] : {}),
+      ...(!disableFill && attrs ? attrs : {}),
     };
 
     return createElement(PathComponent || "path", pathProps);
