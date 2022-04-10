@@ -52,7 +52,7 @@ export default Icon;
 ### Use
 
 ```js
-import Icon from "./icon";
+import Icon from "./Icon";
 
 <Icon icon="pencil" size={20} color="orange" />;
 ```
@@ -150,7 +150,7 @@ export default Icon;
 **Step 3:** Use
 
 ```js
-import Icon from "./icon";
+import Icon from "./Icon";
 
 <Icon icon="pencil" size={20} color="orange" />;
 ```
