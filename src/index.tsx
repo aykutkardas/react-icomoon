@@ -35,12 +35,6 @@ interface IcoMoonProps extends IconProps {
   iconSet: IconSet;
 }
 
-const style: CSSProperties = {
-  display: "inline-block",
-  stroke: "currentColor",
-  fill: "currentColor",
-};
-
 const IcoMoon = ({
   iconSet,
   icon,
@@ -61,21 +55,27 @@ const IcoMoon = ({
 
   if (!currentIcon) return null;
 
+  const initialStyle: CSSProperties = {
+    display: "inline-block",
+    stroke: "currentColor",
+    fill: "currentColor",
+  };
+
   if (native) {
-    style.display = "flex";
-    style.flexDirection = "row";
-    style.flexWrap = "wrap";
+    initialStyle.display = "flex";
+    initialStyle.flexDirection = "row";
+    initialStyle.flexWrap = "wrap";
   }
 
-  props.style = {
-    ...(removeInlineStyle ? {} : style),
+  const comptuedStyle = {
+    ...(removeInlineStyle ? {} : initialStyle),
     ...(size ? { width: size, height: size } : {}),
     ...(props.style || {}),
   };
 
   const { width = "1024" } = currentIcon.icon;
 
-  props.viewBox = `0 0 ${width} 1024`;
+  const viewBox = `0 0 ${width} 1024`;
 
   const children = currentIcon.icon.paths.map((path, index) => {
     const attrs = currentIcon.icon.attrs?.[index];
@@ -93,7 +93,11 @@ const IcoMoon = ({
     children.push(createElement("title", { key: title }, title));
   }
 
-  return createElement(SvgComponent || "svg", props, children);
+  return createElement(
+    SvgComponent || "svg",
+    { ...props, viewBox, style: comptuedStyle },
+    children
+  );
 };
 
 export const iconList = (iconSet: IconSet) => {
