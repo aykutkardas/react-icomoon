@@ -30,7 +30,7 @@ https://icomoon.io/app/
 ```js
 // Icon.jsx
 import IcoMoon from "react-icomoon";
-const iconSet = require("./selection.json");
+import iconSet from "./selection.json";
 
 const Icon = (props) => <IcoMoon iconSet={iconSet} {...props} />;
 
@@ -42,7 +42,7 @@ export default Icon;
 ```tsx
 // Icon.tsx
 import IcoMoon, { IconProps } from "react-icomoon";
-const iconSet = require("./selection.json");
+import iconSet from "./selection.json";
 
 const Icon = (props: IconProps) => <IcoMoon iconSet={iconSet} {...props} />;
 
@@ -132,7 +132,7 @@ yarn add react-icomoon react-native-svg
 // Icon.jsx
 import IcoMoon from "react-icomoon";
 import { Svg, Path } from "react-native-svg";
-const iconSet = require("./selection.json");
+import iconSet from "./selection.json";
 
 const Icon = (props) => (
   <IcoMoon
