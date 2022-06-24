@@ -21,9 +21,9 @@ yarn add react-icomoon
 
 ## Usage
 
-You can use the icons you selected on IcoMoon by downloading the `selection.json` file.
+You can use the icons you selected on [IcoMoon](https://icomoon.io/app/) by downloading the `selection.json` file.
 
-https://icomoon.io/app/
+> You can try [svgps.app](https://svgps.app/) to generate `selection.json` file. 🎉
 
 ### Declare
 
