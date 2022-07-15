@@ -154,3 +154,8 @@ import Icon from "./Icon";
 
 <Icon icon="pencil" size={20} color="orange" />;
 ```
+
+### Related Links
+
+- [vue-icomoon](https://github.com/aykutkardas/vue-icomoon)
+- [svelte-icomoon](https://github.com/aykutkardas/svelte-icomoon) (soon)
