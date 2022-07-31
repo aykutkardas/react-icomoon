@@ -2,6 +2,4 @@ src/index.test.tsx
 tsconfig.json
 .babelrc
 yarn.lock
-logo.png
 .github
-example/

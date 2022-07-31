@@ -7,7 +7,7 @@
 
 It makes it very simple to use SVG icons in your `React` and `React-Native` projects.
 
-### [Cheatsheet](https://react-icomoon.vercel.app/) - [Interactive Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
+### [Cheatsheet](https://cig2vx.csb.app/) - [Interactive Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
 
 ## Install
 
@@ -158,4 +158,4 @@ import Icon from "./Icon";
 ### Related Links
 
 - [vue-icomoon](https://github.com/aykutkardas/vue-icomoon)
-- [svelte-icomoon](https://github.com/aykutkardas/svelte-icomoon) (soon)
+- [svelte-icomoon](https://github.com/aykutkardas/svelte-icomoon)
