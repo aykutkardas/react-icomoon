@@ -7,7 +7,7 @@
 
 It makes it very simple to use SVG icons in your `React` and `React-Native` projects.
 
-### [Cheatsheet](https://cig2vx.csb.app/) - [Interactive Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
+### [Cheatsheet](https://cig2vx.csb.app/) - [Interactive Demo](https://codesandbox.io/s/react-icomoon-demo-13pce) - [Buy Me a Coffee](https://www.buymeacoffee.com/aykutkardas)
 
 ## Install
 
@@ -21,9 +21,9 @@ yarn add react-icomoon
 
 ## Usage
 
-You can use the icons you selected on [IcoMoon](https://icomoon.io/app/) by downloading the `selection.json` file.
+### You can use [svgps.app](https://svgps.app/) to access over `40,000` free icons and convert your own icons into `selection.json`.
 
-> You can try [svgps.app](https://svgps.app/) to generate `selection.json` file. 🎉
+Or you can use [IcoMoon](https://icomoon.io/app/) to generate the `selection.json` file.
 
 ### Declare
 
