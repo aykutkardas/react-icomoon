@@ -2,7 +2,6 @@ import {
   createElement,
   CSSProperties,
   SVGProps,
-  SVGSVGElement,
   JSXElementConstructor,
 } from "react";
 
@@ -21,7 +20,7 @@ type IconSet = {
   icons: IconSetItem[];
 };
 
-export interface IconProps extends SVGProps<SVGSVGElement> {
+export interface IconProps extends SVGProps<SVGElement> {
   icon: string;
   size?: string | number;
   title?: string;
@@ -30,7 +29,7 @@ export interface IconProps extends SVGProps<SVGSVGElement> {
   native?: boolean;
   SvgComponent?: JSXElementConstructor<any>;
   PathComponent?: JSXElementConstructor<any>;
-  style?: Record<string, any>;
+  style?: CSSProperties;
 }
 
 interface IcoMoonProps extends IconProps {
