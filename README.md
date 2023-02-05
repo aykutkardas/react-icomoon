@@ -21,7 +21,7 @@ yarn add react-icomoon
 
 ## Usage
 
-### You can use [svgps.app](https://svgps.app/) to access over `40,000` free icons and convert your own icons into `selection.json`.
+You can use [svgps.app](https://svgps.app/) to access over `40,000` free icons and convert your own icons into `selection.json`.
 
 Or you can use [IcoMoon](https://icomoon.io/app/) to generate the `selection.json` file.
 
