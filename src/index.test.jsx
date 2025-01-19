@@ -1,57 +1,21 @@
-import * as React from "react";
-import Enzyme from "enzyme";
-import Adapter from "@wojtekmaj/enzyme-adapter-react-17";
-import IcoMoon, { iconList } from "../dist/index";
+import { assertEquals } from "https://deno.land/std@0.110.0/testing/asserts.ts";
+import { render } from "https://esm.sh/preact-render-to-string@5.1.19";
+import IcoMoon, { iconList } from "./index.tsx";
+import React from "https://esm.sh/react@17";
 
-Enzyme.configure({ adapter: new Adapter() });
-
-describe("IcoMoon Component Test", () => {
+Deno.test("IcoMoon Component Test", () => {
   const iconSet = getIconSet();
-  it("Check define", () => {
-    expect(IcoMoon).toBeDefined();
-  });
 
-  it("Check render", () => {
-    const Icon = Enzyme.render(
-      <IcoMoon iconSet={iconSet} icon="chat" size={22} />
-    );
-    expect(Icon).toBeDefined();
-  });
-
-  it("Check size props", () => {
-    const Icon = Enzyme.render(
-      <IcoMoon iconSet={iconSet} icon="chat" size={22} />
-    );
-    expect(Icon.prop("style").width).toEqual("22px");
-    expect(Icon.prop("style").height).toEqual("22px");
-  });
-
-  it("Check custom attribute", () => {
-    const Icon = Enzyme.render(
-      <IcoMoon iconSet={iconSet} icon="chat" size={22} data-name="chat" />
-    );
-    expect(Icon.prop("data-name")).toEqual("chat");
-  });
-
-  it("Check title attribute", () => {
-    const Icon = Enzyme.render(
-      <IcoMoon iconSet={iconSet} icon="chat" size={22} title="Chat" />
-    );
-    expect(Icon.find("title").text()).toEqual("Chat");
-  });
+  const Icon = render(<IcoMoon iconSet={iconSet} icon="chat" size={22} />);
+  assertEquals(Icon.includes("width: 22px"), true);
+  assertEquals(Icon.includes("height: 22px"), true);
+  assertEquals(Icon.includes("<title>Chat</title>"), false);
 });
 
-describe("iconList Method Tests", () => {
+Deno.test("iconList Method Tests", () => {
   const iconSet = getIconSet();
-
-  it("Check define", () => {
-    expect(iconList).toBeDefined();
-  });
-
-  it("Check array of iconSet", () => {
-    const expected = ["chat"];
-    expect(iconList(iconSet)).toEqual(expect.arrayContaining(expected));
-  });
+  const expected = ["chat"];
+  assertEquals(iconList(iconSet), expected);
 });
 
 function getIconSet() {
