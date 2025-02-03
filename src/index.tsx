@@ -32,7 +32,7 @@ export interface IconProps extends SVGProps<SVGElement> {
   style?: CSSProperties;
 }
 
-interface IcoMoonProps extends IconProps {
+export interface IcoMoonProps extends IconProps {
   iconSet: IconSet;
 }
 
