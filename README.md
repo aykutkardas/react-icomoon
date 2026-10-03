@@ -7,7 +7,7 @@
 
 It makes it very simple to use SVG icons in your `React` and `React-Native` projects.
 
-### [Cheatsheet](https://cig2vx.csb.app/) - [Interactive Demo](https://codesandbox.io/s/react-icomoon-demo-13pce) - [Buy Me a Coffee](https://www.buymeacoffee.com/aykutkardas)
+### [Cheatsheet](https://cig2vx.csb.app/) - [Interactive Demo](https://codesandbox.io/s/react-icomoon-demo-13pce)
 
 ## Install
 
@@ -107,6 +107,33 @@ iconList(iconSet);
   "bin1",
 ];
 ```
+
+## Reducing Bundle Size
+
+The whole `selection.json` you import ends up in your bundle. IcoMoon only needs each icon's `properties.name`, `icon.paths`, `icon.attrs` and `icon.width`, so you can generate a smaller file that keeps only the icons you use and drops the rest of the metadata:
+
+```js
+// pick-icons.mjs
+import { readFileSync, writeFileSync } from "node:fs";
+
+const [input, output, ...names] = process.argv.slice(2);
+const { icons } = JSON.parse(readFileSync(input, "utf8"));
+
+const picked = icons
+  .filter((item) => names.length === 0 || names.includes(item.properties.name))
+  .map(({ icon, properties }) => ({
+    icon: { paths: icon.paths, attrs: icon.attrs, width: icon.width },
+    properties: { name: properties.name },
+  }));
+
+writeFileSync(output, JSON.stringify({ icons: picked }));
+```
+
+```
+node pick-icons.mjs selection.json icons.json home chat star
+```
+
+Then use `icons.json` as your `iconSet`. Run it without icon names to keep every icon and only strip the metadata.
 
 ## React Native 🎉 • [Demo](https://snack.expo.io/@aykutkardas/react-icomoon)
 
