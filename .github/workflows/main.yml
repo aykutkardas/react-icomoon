@@ -1,19 +1,25 @@
 name: build
 
-on: [push]
+on:
+  push:
+  pull_request:
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
-        deno-version: [1.x]
+        react-version: [16, 17, 18, 19]
 
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Deno
-        uses: denoland/setup-deno@v1
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          deno-version: ${{ matrix.deno-version }}
-      - run: deno test
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm install --no-save react@${{ matrix.react-version }} react-dom@${{ matrix.react-version }}
+      - run: npm run build
+      - run: npm test

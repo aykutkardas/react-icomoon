@@ -1,4 +1,4 @@
-![React-Icomoon Logo](/banner.png)
+![React-Icomoon Logo](https://raw.githubusercontent.com/aykutkardas/react-icomoon/main/banner.png)
 
 [![Build Status](https://github.com/aykutkardas/react-icomoon/workflows/build/badge.svg?color=%234fc921)](https://github.com/aykutkardas/react-icomoon/actions)
 [![npm](https://img.shields.io/npm/v/react-icomoon?color=%234fc921)](https://www.npmjs.com/package/react-icomoon)
@@ -48,6 +48,8 @@ const Icon = (props: IconProps) => <IcoMoon iconSet={iconSet} {...props} />;
 
 export default Icon;
 ```
+
+The `IcoMoonProps`, `IconSet` and `IconSetItem` types are also exported.
 
 ### Use
 
