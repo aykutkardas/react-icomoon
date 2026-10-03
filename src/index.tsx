@@ -5,7 +5,7 @@ import {
   JSXElementConstructor,
 } from "react";
 
-type IconSetItem = {
+export type IconSetItem = {
   properties: {
     name: string;
   };
@@ -16,7 +16,7 @@ type IconSetItem = {
   };
 };
 
-type IconSet = {
+export type IconSet = {
   icons: IconSetItem[];
 };
 
@@ -47,7 +47,8 @@ const IcoMoon = ({
   SvgComponent,
   PathComponent,
   ...props
-}: IcoMoonProps) => {
+}: IcoMoonProps): any => {
+  // Return type is kept as `any` to match the published 2.x typings.
   if (!iconSet || !icon) return null;
 
   const currentIcon = iconSet.icons.find(
@@ -68,7 +69,7 @@ const IcoMoon = ({
     initialStyle.flexWrap = "wrap";
   }
 
-  const comptuedStyle = {
+  const computedStyle = {
     ...(removeInlineStyle ? {} : initialStyle),
     ...(size ? { width: size, height: size } : {}),
     ...(props.style || {}),
@@ -96,7 +97,7 @@ const IcoMoon = ({
 
   return createElement(
     SvgComponent || "svg",
-    { ...props, viewBox, style: comptuedStyle },
+    { ...props, viewBox, style: computedStyle },
     children
   );
 };
